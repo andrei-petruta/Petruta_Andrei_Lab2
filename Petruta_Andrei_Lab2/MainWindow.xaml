@@ -58,12 +58,12 @@ Click="stopToolStripMenuItem_Click"/>
                 <ComboBox x:Name="cmbType" Width="120" Canvas.Left="243" Canvas.Top="12" SelectionChanged="cmbType_SelectionChanged" FontWeight="Normal"/>
                 <Label x:Name="lblPrice" Content="Price" Canvas.Left="410" Canvas.Top="10" FontWeight="Normal"/>
                 <TextBox x:Name="txtPrice" Text="0" TextWrapping="Wrap" Width="120" Canvas.Left="451" Canvas.Top="14" FontWeight="Normal" IsReadOnly="True"/>
-                <ListBox Height="94" Width="621" Canvas.Left="20" Canvas.Top="40"/>
+                <ListBox x:Name="lstSale" Height="94" Width="621" Canvas.Left="20" Canvas.Top="40"/>
                 <Label x:Name="lblTotal" Content="Total" Canvas.Left="468" Canvas.Top="136" RenderTransformOrigin="1.119,0.478"/>
                 <TextBox x:Name="txtTotal" Text="0" TextWrapping="Wrap" Width="130" Canvas.Left="511" Canvas.Top="140" FontWeight="Normal" IsReadOnly="True"/>
-                <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="646" Canvas.Top="40" Width="78" FontWeight="Normal"/>
-                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="646" Canvas.Top="72" Width="78" FontWeight="Normal"/>
-                <Button x:Name="btnCheckOut" Content="Checkout" Canvas.Left="646" Canvas.Top="138" Width="78" FontWeight="Bold"/>
+                <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="646" Canvas.Top="40" Width="78" FontWeight="Normal" Click="btnAdd_Click"/>
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="646" Canvas.Top="72" Width="78" FontWeight="Normal" Click=" btnRemoveItem_Click"/>
+                <Button x:Name="btnCheckOut" Content="Checkout" Canvas.Left="646" Canvas.Top="138" Width="78" FontWeight="Bold" Click=" btnCheckOut_Click"/>
             </Canvas>
         </GroupBox>
 
