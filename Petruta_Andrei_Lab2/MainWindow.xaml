@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Petruta_Andrei_Lab2"
         mc:Ignorable="d"
         Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded">
-    <Grid>
+    <Grid MenuItem.Click="FilledItemsShow_Click">
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
 Width="131" Margin="0,26,0,0">
             <MenuItem Header="File">
@@ -25,6 +25,7 @@ IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                         <MenuItem x:Name="chocolateFilledMenuItem" Header="Chocolate" IsCheckable="True"/>
                         <MenuItem x:Name="vanillaFilledMenuItem" Header="Vanilla" IsCheckable="True"/>
                     </MenuItem>
+                    
                 </MenuItem>
                 <MenuItem x:Name="mnuStop" Header="Stop"
 Click="stopToolStripMenuItem_Click"/>
