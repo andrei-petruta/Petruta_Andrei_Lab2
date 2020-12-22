@@ -4,8 +4,38 @@ using System.Text;
 
 namespace Petruta_Andrei_Lab2
 {
-    class DoughnutMachine
+    class DoughnutMachine : Component
     {
+
+        private DoughnutType mFlavor;
+
+        public DoughnutType Flavor
+        {
+            get
+            {
+                return mFlavor;
+            }
+
+            set
+            {
+                mFlavor = value;
+            }
+        }
+
+
+        private System.Collections.ArrayList mDoughnuts = new System.Collections.ArrayList();
+        public Doughnut this[int Index]
+        {
+            get
+            {
+                return (Doughnut)mDoughnuts[Index];
+            }
+
+            set
+            {
+                mDoughnuts[Index] = value;
+            }
+        }
     }
 
     public enum DoughnutType
@@ -20,8 +50,6 @@ namespace Petruta_Andrei_Lab2
     class Doughnut
     {
         private DoughnutType mFlavor;
-
-
         public DoughnutType Flavor
         {
             get
@@ -63,30 +91,18 @@ namespace Petruta_Andrei_Lab2
 
 
 
+
         public Doughnut(DoughnutType aFlavor) //constructor 
         {
             mTimeOfCreation = DateTime.Now;
             mFlavor = aFlavor;
         }
-
-
-
-        private DoughnutType mFlavor;
-
-        public DoughnutType Flavor
-        {
-            get
-            {
-                return mFlavor;
-            }
-
-            set
-            {
-                mFlavor = value;
-            }
-        }
-
-
-
     }
+
+
+        
+
+
+
+
 }
