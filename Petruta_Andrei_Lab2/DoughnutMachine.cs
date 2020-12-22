@@ -6,9 +6,11 @@ namespace Petruta_Andrei_Lab2
 {
     class DoughnutMachine : Component
     {
+        public delegate void DoughnutCompleteDelegate();
+        public event DoughnutCompleteDelegate DoughnutComplete;
+
 
         private DoughnutType mFlavor;
-
         public DoughnutType Flavor
         {
             get
@@ -36,6 +38,9 @@ namespace Petruta_Andrei_Lab2
                 mDoughnuts[Index] = value;
             }
         }
+
+
+        
     }
 
     public enum DoughnutType
