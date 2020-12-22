@@ -26,6 +26,10 @@ namespace Petruta_Andrei_Lab2
         {
             myDoughnutMachine = new DoughnutMachine();
             myDoughnutMachine.DoughnutComplete += new DoughnutMachine.DoughnutCompleteDelegate(DoughnutCompleteHandler);
+
+            cmbType.ItemsSource = PriceList;
+            cmbType.DisplayMemberPath = "Key";
+            cmbType.SelectedValuePath = "Value";
         }
 
         private int mRaisedGlazed;
@@ -128,5 +132,58 @@ namespace Petruta_Andrei_Lab2
             mesaj = SelectedItem.Header.ToString() + " doughnuts are being cooked!";
             this.Title = mesaj;
         }
+
+
+        KeyValuePair<DoughnutType, double>[] PriceList = {
+            new KeyValuePair<DoughnutType, double>(DoughnutType.Sugar, 2.5),
+            new KeyValuePair<DoughnutType, double>(DoughnutType.Glazed,3),
+            new KeyValuePair<DoughnutType, double>(DoughnutType.Chocolate,4.5),
+            new KeyValuePair<DoughnutType, double>(DoughnutType.Vanilla,4),
+            new KeyValuePair<DoughnutType, double>(DoughnutType.Lemon,3.5)
+         };
+
+        DoughnutType selectedDoughnut;
+
+
+        private void cmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txtPrice.Text = cmbType.SelectedValue.ToString();
+            KeyValuePair<DoughnutType, double> selectedEntry =
+           (KeyValuePair<DoughnutType, double>)cmbType.SelectedItem;
+            selectedDoughnut = selectedEntry.Key;
+        }
+
+
+        private int ValidateQuantity(DoughnutType selectedDoughnut)
+        {
+            int q = int.Parse(txtQuantity.Text);
+            int r = 1;
+
+            switch (selectedDoughnut)
+            {
+                case DoughnutType.Glazed:
+                    if (q > mRaisedGlazed)
+                        r = 0;
+                    break;
+                case DoughnutType.Sugar:
+                    if (q > mRaisedSugar)
+                        r = 0;
+                    break;
+                case DoughnutType.Chocolate:
+                    if (q > mFilledChocolate)
+                        r = 0;
+                    break;
+                case DoughnutType.Lemon:
+                    if (q > mFilledLemon)
+                        r = 0;
+                    break;
+                case DoughnutType.Vanilla:
+                    if (q > mFilledVanilla)
+                        r = 0;
+                    break;
+            }
+            return r;
+        }
+
     }
 }
