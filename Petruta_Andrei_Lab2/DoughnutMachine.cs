@@ -5,7 +5,7 @@ using System.Windows.Threading;
 
 namespace Petruta_Andrei_Lab2
 {
-    class DoughnutMachine : Component
+    class DoughnutMachine
     {
         public delegate void DoughnutCompleteDelegate();
         public event DoughnutCompleteDelegate DoughnutComplete;
@@ -84,6 +84,30 @@ namespace Petruta_Andrei_Lab2
                 doughnutTimer.Interval = new TimeSpan(0, 0, value);
             }
         } 
+
+
+        public void MakeDoughnuts(DoughnutType dFlavor)
+        {
+            Flavor = dFlavor;
+            switch (Flavor)
+            {
+                case DoughnutType.Glazed:Interval = 3; break;
+                case DoughnutType.Sugar:Interval = 2; break;
+                case DoughnutType.Lemon:Interval = 5; break;
+                case DoughnutType.Chocolate:Interval = 7; break;
+                case DoughnutType.Vanilla:Interval = 4; break;
+            }
+            doughnutTimer.Start();
+        }
+
+
+
+
+
+
+
+
+
     }
 
     public enum DoughnutType
