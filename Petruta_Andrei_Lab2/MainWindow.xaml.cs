@@ -20,6 +20,26 @@ namespace Petruta_Andrei_Lab2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DoughnutMachine myDoughnutMachine;
+
+        private void frmMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            myDoughnutMachine = new DoughnutMachine();
+        }
+
+        private int mRaisedGlazed;
+        private int mRaisedSugar;
+        private int mFilledLemon;
+        private int mFilledChocolate;
+        private int mFilledVanilla;
+
+
+
+
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();

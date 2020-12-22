@@ -5,7 +5,7 @@ using System.Windows.Threading;
 
 namespace Petruta_Andrei_Lab2
 {
-    class DoughnutMachine
+    class DoughnutMachine : Component
     {
         public delegate void DoughnutCompleteDelegate();
         public event DoughnutCompleteDelegate DoughnutComplete;
