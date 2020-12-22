@@ -71,6 +71,21 @@ namespace Petruta_Andrei_Lab2
 
 
 
+        private DoughnutType mFlavor;
+
+        public DoughnutType Flavor
+        {
+            get
+            {
+                return mFlavor;
+            }
+
+            set
+            {
+                mFlavor = value;
+            }
+        }
+
 
 
     }
