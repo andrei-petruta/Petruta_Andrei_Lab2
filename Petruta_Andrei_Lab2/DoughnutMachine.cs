@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Threading;
 
 namespace Petruta_Andrei_Lab2
 {
@@ -40,7 +41,49 @@ namespace Petruta_Andrei_Lab2
         }
 
 
+
+
+        System.Windows.Threading.DispatcherTimer doughnutTimer; // AICI CEVA NU E BINE
+
+        private void InitializeComponent()
+        {
+            this.doughnutTimer = new DispatcherTimer();
+
+            this.doughnutTimer.Tick += new System.EventHandler(this.doughnutTimer_Tick);
+        }
+
         
+        
+
+
+        public DoughnutMachine()
+        {
+            InitializeComponent();
+        }
+
+
+        private void doughnutTimer_Tick(object sender, EventArgs e)
+        {
+            Doughnut aDoughnut = new Doughnut(this.Flavor);
+            mDoughnuts.Add(aDoughnut);
+            DoughnutComplete();
+        }
+
+
+        public bool Enabled
+        {
+            set
+            {
+                doughnutTimer.IsEnabled = value;
+            }
+        }
+        public int Interval
+        {
+            set
+            {
+                doughnutTimer.Interval = new TimeSpan(0, 0, value);
+            }
+        } 
     }
 
     public enum DoughnutType
