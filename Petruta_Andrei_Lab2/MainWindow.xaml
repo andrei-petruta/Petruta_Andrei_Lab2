@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Petruta_Andrei_Lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded">
     <Grid>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
 Width="131" Margin="0,26,0,0">
@@ -48,7 +48,7 @@ Click="stopToolStripMenuItem_Click"/>
         <GroupBox x:Name="gbSale" Header="Current Sale" Margin="27,225,10,10" FontWeight="Bold">
             <Canvas Height="171" VerticalAlignment="Center" Margin="0,0,9,0">
                 <Label x:Name="lblQuantity" Content="Quantity" Height="26" Canvas.Left="10" Canvas.Top="9" Width="111" FontWeight="Normal"/>
-                <TextBox x:Name="txtQuantity" Text="0" TextWrapping="Wrap" Width="75" Canvas.Left="75" Canvas.Top="14" FontWeight="Normal"/>
+                <TextBox x:Name="txtQuantity" Text="0" TextWrapping="Wrap" Width="75" Canvas.Left="75" Canvas.Top="14" FontWeight="Normal" KeyUp="txtQuantity_KeyPress"/>
                 <Label x:Name="lblType" Content="Type" Canvas.Left="203" Canvas.Top="9" FontWeight="Normal"/>
                 <ComboBox x:Name="cmbType" Width="120" Canvas.Left="243" Canvas.Top="12"/>
                 <Label x:Name="lblPrice" Content="Price" Canvas.Left="410" Canvas.Top="10" FontWeight="Normal"/>

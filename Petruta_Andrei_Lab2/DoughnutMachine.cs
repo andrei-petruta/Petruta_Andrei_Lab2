@@ -5,10 +5,16 @@ using System.Windows.Threading;
 
 namespace Petruta_Andrei_Lab2
 {
-    class DoughnutMachine : Component
+    class DoughnutMachine
     {
         public delegate void DoughnutCompleteDelegate();
         public event DoughnutCompleteDelegate DoughnutComplete;
+
+
+        public DoughnutMachine()
+        {
+            InitializeComponent();
+        }
 
 
         private DoughnutType mFlavor;
@@ -43,7 +49,6 @@ namespace Petruta_Andrei_Lab2
 
 
 
-        System.Windows.Threading.DispatcherTimer doughnutTimer; // AICI CEVA NU E BINE
 
         private void InitializeComponent()
         {
@@ -52,14 +57,7 @@ namespace Petruta_Andrei_Lab2
             this.doughnutTimer.Tick += new System.EventHandler(this.doughnutTimer_Tick);
         }
 
-        
-        
-
-
-        public DoughnutMachine()
-        {
-            InitializeComponent();
-        }
+        System.Windows.Threading.DispatcherTimer doughnutTimer; 
 
 
         private void doughnutTimer_Tick(object sender, EventArgs e)
@@ -121,6 +119,13 @@ namespace Petruta_Andrei_Lab2
 
     class Doughnut
     {
+        public Doughnut(DoughnutType aFlavor) //constructor 
+        {
+            mTimeOfCreation = DateTime.Now;
+            mFlavor = aFlavor;
+        }
+
+
         private DoughnutType mFlavor;
         public DoughnutType Flavor
         {
@@ -164,17 +169,8 @@ namespace Petruta_Andrei_Lab2
 
 
 
-        public Doughnut(DoughnutType aFlavor) //constructor 
-        {
-            mTimeOfCreation = DateTime.Now;
-            mFlavor = aFlavor;
-        }
-    }
-
-
         
-
-
+    }
 
 
 }
