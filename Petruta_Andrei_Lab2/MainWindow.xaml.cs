@@ -74,7 +74,15 @@ namespace Petruta_Andrei_Lab2
                     mRaisedSugar++;
                     txtSugarRaised.Text = mRaisedSugar.ToString();
                     break;
-                    //...
+                case DoughnutType.Lemon:
+                    mFilledLemon++;
+                    txtLemonFilled.Text = mFilledLemon.ToString(); break;
+                case DoughnutType.Chocolate:
+                    mFilledChocolate++;
+                    txtChocolateFilled.Text = mFilledChocolate.ToString(); break;
+                case DoughnutType.Vanilla:
+                    mFilledVanilla++;
+                    txtVanillaFilled.Text = mFilledVanilla.ToString(); break;
             }
         }
 
@@ -100,6 +108,16 @@ namespace Petruta_Andrei_Lab2
                MessageBox.Show("Numai cifre se pot introduce!", "Input Error", MessageBoxButton.OK,
                MessageBoxImage.Error);
             }
+        }
+
+        private void FilledItems_Click(object sender, RoutedEventArgs e)
+        {
+            string DoughnutFlavour;
+
+            MenuItem SelectedItem = (MenuItem)e.OriginalSource;
+            DoughnutFlavour = SelectedItem.Header.ToString();
+            Enum.TryParse(DoughnutFlavour, out DoughnutType myFlavour);
+            myDoughnutMachine.MakeDoughnuts(myFlavour);
         }
     }
 }
