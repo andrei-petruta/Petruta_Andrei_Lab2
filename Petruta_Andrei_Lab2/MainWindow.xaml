@@ -29,6 +29,7 @@ IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="mnuStop" Header="Stop"
 Click="stopToolStripMenuItem_Click"/>
+                <MenuItem Header="Inventory"  Command="ApplicationCommands.Print" ></MenuItem>
             </MenuItem>
         </Menu>
         <Label x:Name="lblTitle" Content="Doughnuts - Bake &amp; Sale" Margin="241,10,241,329" FontSize="24" FontWeight="Bold"/>
